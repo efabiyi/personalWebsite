@@ -1863,7 +1863,7 @@ input, select, textarea {
 
     .carousel-arrow {
       font-size: 36px;
-      color: #12c2e9;
+      color: #2c5f2d;
       cursor: pointer;
       padding: 10px;
       border-radius: 6px;
@@ -1871,7 +1871,7 @@ input, select, textarea {
     }
 
     .carousel-arrow:hover {
-      background: rgba(18, 194, 233, 0.2);
+      background: rgba(44, 95, 45, 0.2);
     }
 
     .carousel-controls {
@@ -1883,7 +1883,7 @@ input, select, textarea {
 
     button {
       padding: 10px 20px;
-      background:#97bc62;
+      background:#2c5f2d;
       color: white;
       border: none;
       border-radius: 6px;
@@ -1898,7 +1898,7 @@ input, select, textarea {
     .download-btn {
       margin-top: 15px;
       padding: 10px 20px;
-      background: #12c2e9;
+      background: ##2c5f2d;
       color: white;
       border: none;
       border-radius: 6px;
@@ -1908,7 +1908,7 @@ input, select, textarea {
     }
 
     .download-btn:hover {
-      background: #97bc62;
+      background: #2c5f2d;
     }
 
 /* Footer */
