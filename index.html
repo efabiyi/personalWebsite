@@ -95,6 +95,17 @@
 								<div class="timeline">
 									<div class="seedling">🌱</div>
 
+										<div class="event">
+										<div class="event-content" data-tag="project">
+											<span class="event-tag project">Project</span>
+											<h3>Autonomous Pet Rescue Robot </h3>
+											<p>May 2025 - Aug 2025</p>
+											<p>Designed and manufactured a fully autonomous robot to compete in ENPH 253 robot "pet rescue" competition. Adopted a systems-focused role on the team, designing PCBs, creating CAD models, and writing logging software to create a robot that would consistently score 5/7 points and placed in the semifinals. My favourite project in university so far! <a href="#projects" style="text-decoration: underline;"> Read more about it here!</a></p>
+										</div>
+										<div class="event-circle"></div>
+
+									</div>
+
 
 									<div class="event">
 										<div class="event-content" data-tag="work">
@@ -120,9 +131,9 @@
 									<div class="event">
 										<div class="event-content" data-tag="leadership">
 											<span class="event-tag leadership">Leadership</span>
-											<h3>Director of Outreach - WiDS</h3>
+											<h3>Vice President of External Outreach - Women in Data Science at UBC</h3>
 											<p>September 2024 - Present</p>
-											<p>Secured partnerships with 15+ companies including Microsoft, Amazon,and SAP, increasing event funding and engagement. Led outreach to bring industry professionals as panelists, judges, and mentors, expanding networking and career opportunities for 1000+ attendees over the course of 10 events.</p>
+											<p>Managed a team of 4 outreach coordinators. Secured partnerships with 15+ companies including Microsoft, Amazon,and SAP, increasing event funding and engagement. Led outreach to bring industry professionals as panelists, judges, and mentors, expanding networking and career opportunities for 2000+ attendees over the course of 10 events.</p>
 										</div>
 										<div class="event-circle"></div>
 									</div>
@@ -235,6 +246,12 @@
 
 								const projects = [
 								{
+								image: 'images/robocollage.png',
+								title: 'Autonomous Pet Rescue Robot',
+								description: "During Robot Summer, I spent six weeks in intensive coursework, followed by six weeks designing and building a fully autonomous robot for the ENPH 253 final competition. The challenge: navigate a playing field filled with obstacles, locate seven stuffed-animal “pets,” and return as many as possible to safety — all in under two minutes. <br><br>Out of 16 teams, we were one of only three to collect five pets successfully, earning a spot in the semifinals. I contributed by designing custom PCBs for Hall effect sensors to detect pets, prototyping a lift mechanism for to send the pets down a zipline, and developing logging software to speed up debugging. While my focus was on hardware and software integration, I also supported the broader system: a robot featuring a mechanical claw driven by inverse kinematics, LIDAR for detection, IR reflectance sensors for line following, and H-bridges for precise motor control.<br><br> Our robot wasn’t the fastest — but it was the most reliable, and in a competition where consistency mattered, that made all the difference.",
+								stlUrl: 'path/to/seed-analyzer.stl'
+								},
+								{
 								image: 'images/adaptdevice.png',
 								title: 'Adaptive Knife Device',
 								description: "In my APSC 100 class, I designed and created an adaptive device to assist individuals with limited hand mobility in using a knife. This device was designed to enhance the ability of people with disabilities to safely and effectively use a knife for everyday tasks. By focusing on ergonomic design and ease of use, I created a solution that improved accessibility and demonstrated my commitment to solving real-world problems with thoughtful, inclusive designs.",
@@ -243,13 +260,13 @@
 								{
 								image: 'images/adpt.png',
 								title: 'Telescoping PVC Adapters',
-								description: 'During my internship at Insporos, I was tasked with creating an overhead camera rig designed to consistently image a variety of seed types in their experiments. The challenge was that different seed types required varying distances between the camera and the surface. To solve this, I designed a telescoping adapter for PVC pipes, allowing the camera’s height to be easily adjustable for accurate measurements, regardless of the seed type. The project allowed me to apply engineering skills in a real-world context, while also contributing to research that could improve agricultural processes.',
+								description: 'During my internship at Insporos, I was tasked with creating an overhead camera rig designed to consistently image a variety of seed types in their experiments. The challenge was that different seed types required varying distances between the camera and the surface. <br><br> To solve this, I designed a telescoping adapter for PVC pipes, allowing the camera’s height to be easily adjustable for accurate measurements, regardless of the seed type. The project allowed me to apply engineering skills in a real-world context, while also contributing to research that could improve agricultural processes.',
 								stlUrl: 'models/telescopingclamp.stl'
 								},
 								{
 								image: 'images/TGG2.png',
 								title: 'The Garden Guard',
-								description: " When my high school’s environment club was discontinued, the future of our indoor garden was uncertain. The garden, once maintained by the dedicated members of the club, was at risk of wilting due to a lack of consistent care. Recognizing the problem, I developed Garden Guard, an automated watering system designed to ensure the garden's survival even with fewer people available to tend to it. Using Java, a variety of sensors, and custom CAD models, I created a system that monitored soil moisture levels and automatically watered the plants when needed. This allowed the garden to continue thriving with minimal human intervention, preserving the environment initiative at our school for years to come. You can find my slightly embarrassing code on github!",
+								description: " When my high school’s environment club was discontinued, the future of our indoor garden was uncertain. The garden, once maintained by the dedicated members of the club, was at risk of dying due to a lack of consistent care.<br><br> Recognizing the problem, I developed Garden Guard, an automated watering system designed to ensure the garden's survival even with fewer people available to tend to it. Using Java, a variety of sensors, pumps, and custom CAD models, I created a system that monitored soil moisture levels and automatically watered the plants when needed. This allowed the garden to continue thriving with minimal human intervention, preserving the environment initiative at our school for years to come. <br><br> You can find my slightly embarrassing code on github!",
 								stlUrl: 'models/TheGardenGuard.stl'
 								}
 								];
@@ -261,6 +278,24 @@
 								  const offset = direction === 0 ? 0 : (direction > 0 ? 100 : -100);
 
 								  carousel.style.transform = `translateX(${offset}%)`;
+
+								  if (index == 0){
+									
+								  setTimeout(() => {
+									carousel.innerHTML = `
+									  <h3>${project.title}</h3>
+									  <p>${project.description}</p>
+									  <img src="${project.image}" alt="${project.title}">
+									  <!--<div style="margin-top: 10px;">
+										<a href="${project.downloadUrl}" download>
+										  <button class="download-btn">Download Project 1 Pager</button>
+										</a>
+									  </div>-->
+									`;
+									carousel.style.transform = `translateX(0%)`;
+								  }, 150);
+
+								  } else {
 
 								  setTimeout(() => {
 									carousel.innerHTML = `
@@ -275,6 +310,8 @@
 									`;
 									carousel.style.transform = `translateX(0%)`;
 								  }, 150);
+								  }
+
 								}
 
 
