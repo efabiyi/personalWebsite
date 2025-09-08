@@ -1855,11 +1855,16 @@ input, select, textarea {
      }
 
     .carousel-container img {
-      max-height: 500px;
-      width: auto;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
+		width: 100%;
+		max-width: 600px; /* or whatever max width you prefer */
+		max-height: 400px; /* adjust as needed */
+		object-fit: contain; /* ensures the whole image is visible and scaled */
+		border-radius: 8px;
+		margin-bottom: 15px;
+		display: block;
+		margin-left: auto;
+		margin-right: auto;
+	}
 
     .carousel-arrow {
       font-size: 36px;
